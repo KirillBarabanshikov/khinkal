@@ -10,10 +10,28 @@ import styles from './Area.module.scss';
 
 export const Area = () => {
     const [isRotate, setIsRotate] = useState(false);
-    const [selectedPlaces, setSelectedPlaces] = useState<number[]>([]);
+    const [selectedPlaces, setSelectedPlaces] = useState<number[]>([0, 0, 0, 0]);
 
     const handleSelect = (number: number) => {
-        setSelectedPlaces((prev) => [...prev, number]);
+        if (selectedPlaces.includes(number)) return;
+
+        setSelectedPlaces((prev) => {
+            const newPlaces = [...prev];
+            const index = newPlaces.indexOf(0);
+            if (index !== -1) {
+                newPlaces[index] = number;
+            }
+            return newPlaces;
+        });
+    };
+
+    const handleDragEnd = (number: number) => {
+        setSelectedPlaces((prev) =>
+            prev.map((num) => {
+                if (num === number) return 0;
+                return num;
+            }),
+        );
     };
 
     return (
@@ -30,8 +48,10 @@ export const Area = () => {
                 onClick={() => setIsRotate((prev) => !prev)}
                 className={clsx(styles.khinkal, styles.right)}
             />
-            {selectedPlaces.map((number) => {
-                return <Place key={number} number={number} numberPosition={'left'} />;
+            {Array.from({ length: 4 }).map((_, index) => {
+                const number = selectedPlaces[index];
+
+                return <Place key={index} number={number} index={index} onDragEnd={() => handleDragEnd(number)} />;
             })}
             <Keyboard className={styles.keyboard} onSelect={handleSelect} />
         </motion.div>

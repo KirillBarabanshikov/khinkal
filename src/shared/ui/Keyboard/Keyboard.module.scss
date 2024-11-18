@@ -28,8 +28,17 @@
             font-weight: 600;
             font-size: 20px;
 
+            transition:
+                background-color 300ms ease-out,
+                color 300ms ease-out;
+
             @media (hover: hover) {
                 cursor: pointer;
+            }
+
+            &:active {
+                background-color: transparent;
+                color: var(--color-beige);
             }
         }
     }

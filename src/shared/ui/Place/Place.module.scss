@@ -2,13 +2,61 @@
     position: absolute;
     transform: rotate(180deg);
 
+    &.placeWrap-0 {
+        right: -94px;
+        bottom: -94px;
+
+        .place {
+            .number {
+                bottom: -96px;
+                left: 118px;
+            }
+        }
+    }
+
+    &.placeWrap-1 {
+        top: 24px;
+        right: 313px;
+
+        .place {
+            .number {
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &.placeWrap-2 {
+        top: 24px;
+        left: 313px;
+
+        .place {
+            .number {
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    &.placeWrap-3 {
+        left: -94px;
+        bottom: -94px;
+
+        .place {
+            .number {
+                bottom: -96px;
+                right: 118px;
+            }
+        }
+    }
+
     .place {
         position: relative;
+        width: 615px;
+        height: 615px;
 
         .number {
             position: absolute;
-            left: 0;
-            bottom: 0;
             display: flex;
             align-content: center;
             justify-content: center;

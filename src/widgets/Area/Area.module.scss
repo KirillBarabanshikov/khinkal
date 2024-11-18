@@ -2,6 +2,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 
     .khinkal {
         position: absolute;
@@ -23,6 +24,7 @@
 
     .keyboard {
         position: absolute;
+        z-index: 10;
         left: calc(50% - 352px);
         bottom: 32px;
     }
