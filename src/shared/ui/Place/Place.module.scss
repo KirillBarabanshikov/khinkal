@@ -1,0 +1,31 @@
+.placeWrap {
+    position: absolute;
+    transform: rotate(180deg);
+
+    .place {
+        position: relative;
+
+        .number {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+
+            width: 96px;
+            height: 96px;
+            border-radius: 96px;
+            border: 6px solid var(--color-beige);
+            background-color: var(--color-brown);
+
+            span {
+                display: block;
+                font-weight: 600;
+                font-size: 64px;
+                line-height: 75px;
+                color: var(--color-beige);
+            }
+        }
+    }
+}
