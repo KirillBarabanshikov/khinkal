@@ -1,0 +1,36 @@
+.keyboardWrap {
+    padding: 32px;
+    background-color: var(--color-brown);
+    border-radius: 32px;
+    max-width: 704px;
+    box-shadow: 0 0 20px 8px #00000033;
+
+    .title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 37.5px;
+        text-align: center;
+        color: var(--color-beige);
+        margin-bottom: 16px;
+    }
+
+    .keyboard {
+        display: grid;
+        grid-template-columns: repeat(9, 64px);
+        grid-gap: 8px;
+
+        .key {
+            width: 64px;
+            height: 64px;
+            background-color: var(--color-beige);
+            border-radius: 16px;
+
+            font-weight: 600;
+            font-size: 20px;
+
+            @media (hover: hover) {
+                cursor: pointer;
+            }
+        }
+    }
+}
