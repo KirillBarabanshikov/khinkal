@@ -13,8 +13,6 @@ export const Area = () => {
     const [selectedPlaces, setSelectedPlaces] = useState<number[]>([0, 0, 0, 0]);
 
     const handleSelect = (number: number) => {
-        if (selectedPlaces.includes(number)) return;
-
         setSelectedPlaces((prev) => {
             const newPlaces = [...prev];
             const index = newPlaces.indexOf(0);
@@ -25,10 +23,10 @@ export const Area = () => {
         });
     };
 
-    const handleRemove = (number: number) => {
+    const handleRemove = (index: number) => {
         setSelectedPlaces((prev) =>
-            prev.map((num) => {
-                if (num === number) return 0;
+            prev.map((num, idx) => {
+                if (index === idx) return 0;
                 return num;
             }),
         );
@@ -51,7 +49,7 @@ export const Area = () => {
             {Array.from({ length: 4 }).map((_, index) => {
                 const number = selectedPlaces[index];
 
-                return <Place key={index} number={number} index={index} onRemove={() => handleRemove(number)} />;
+                return <Place key={index} number={number} index={index} onRemove={() => handleRemove(index)} />;
             })}
             <Keyboard className={styles.keyboard} onSelect={handleSelect} />
         </motion.div>
