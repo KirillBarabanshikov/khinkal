@@ -55,6 +55,12 @@
         width: 615px;
         height: 615px;
 
+        &.empty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .number {
             position: absolute;
             display: flex;
@@ -75,5 +81,42 @@
                 color: var(--color-beige);
             }
         }
+    }
+
+    .cancel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 363px;
+        height: 72px;
+        background-color: var(--color-brown);
+        color: var(--color-beige);
+        border-radius: 16px;
+        font-weight: 600;
+        font-size: 24px;
+
+        @media (hover: hover) {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+
+    .timer {
+        position: absolute;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 37.5px;
     }
 }

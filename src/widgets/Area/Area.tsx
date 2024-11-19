@@ -25,7 +25,7 @@ export const Area = () => {
         });
     };
 
-    const handleDragEnd = (number: number) => {
+    const handleRemove = (number: number) => {
         setSelectedPlaces((prev) =>
             prev.map((num) => {
                 if (num === number) return 0;
@@ -51,7 +51,7 @@ export const Area = () => {
             {Array.from({ length: 4 }).map((_, index) => {
                 const number = selectedPlaces[index];
 
-                return <Place key={index} number={number} index={index} onDragEnd={() => handleDragEnd(number)} />;
+                return <Place key={index} number={number} index={index} onRemove={() => handleRemove(number)} />;
             })}
             <Keyboard className={styles.keyboard} onSelect={handleSelect} />
         </motion.div>
