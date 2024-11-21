@@ -46,7 +46,10 @@ export const Place: FC<IPlaceProps> = ({ number, index, onRemove, className }) =
                         className={styles.place}
                     >
                         <div className={styles.number}>
-                            <span>{number}</span>
+                            <span>
+                                {number}
+                                {(number === 6 || number === 9) && '.'}
+                            </span>
                         </div>
                         <img src={placeImg} alt={'place'} draggable={'false'} />
                     </motion.div>
